@@ -1,4 +1,4 @@
-package CustomExceptions;
+package customExceptions;
 
 public final class ProductAmountException extends RuntimeException {
     public ProductAmountException(String s,int i) {

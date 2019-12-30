@@ -1,4 +1,4 @@
-package CustomExceptions;
+package customExceptions;
 
 public final class NoSuchProductException extends RuntimeException {
 

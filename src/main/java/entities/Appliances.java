@@ -1,7 +1,7 @@
-package Entities;
+package entities;
 
-import Interfaces.Electrical;
-import Manufacturers.Manufacturers;
+import interfaces.Electrical;
+import manufacturers.Manufacturers;
 import lombok.Data;
 import lombok.Getter;
 

@@ -1,14 +1,13 @@
-package Entities;
+package entities;
 
-import CustomExceptions.NoSuchProductException;
-import CustomExceptions.ProductAmountException;
-import Manufacturers.Manufacturers;
-import lombok.Data;
+import customExceptions.NoSuchProductException;
+import customExceptions.ProductAmountException;
+import manufacturers.Manufacturers;
+import services.FoodManagerService;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
-public class Fridge extends Appliances {
+public class Fridge extends Appliances implements FoodManagerService {
 
     private int lowestT;
 
@@ -26,8 +25,8 @@ public class Fridge extends Appliances {
         super.creationMessage();
         System.out.println("fridge");
     }
-
-    public void putProduct(String product, int amount){
+    @Override
+    public void putProduct(String product, Integer amount){
         if (products.containsKey(product)){
             products.replace(product,products.get(product)+amount);
             System.out.println("You ve add product - " + product + " amount - " + amount);
@@ -36,8 +35,8 @@ public class Fridge extends Appliances {
             System.out.println("You ve put product - " + product + " amount - " + amount);
         }
     }
-
-    public void getProduct(String product, int amount){
+    @Override
+    public void getProduct(String product, Integer amount){
         try{
             System.out.println("Open fridge");
             if (!products.containsKey(product)){
